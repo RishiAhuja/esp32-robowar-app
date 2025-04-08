@@ -60,25 +60,25 @@ graph TB
     GND --> ESP
     
     %% Motor Driver #1 Control
-    ESP --> |GPIO 25 (IN1)| MD1
-    ESP --> |GPIO 26 (IN2)| MD1
-    ESP --> |GPIO 27 (IN3)| MD1
-    ESP --> |GPIO 14 (IN4)| MD1
+    ESP -- "GPIO 25 (IN1)" --> MD1
+    ESP -- "GPIO 26 (IN2)" --> MD1
+    ESP -- "GPIO 27 (IN3)" --> MD1
+    ESP -- "GPIO 14 (IN4)" --> MD1
     
     %% Motor Driver #2 Control
-    ESP --> |GPIO 12 (IN1)| MD2
-    ESP --> |GPIO 13 (IN2)| MD2
-    ESP --> |GPIO 32 (IN3)| MD2
-    ESP --> |GPIO 33 (IN4)| MD2
+    ESP -- "GPIO 12 (IN1)" --> MD2
+    ESP -- "GPIO 13 (IN2)" --> MD2
+    ESP -- "GPIO 32 (IN3)" --> MD2
+    ESP -- "GPIO 33 (IN4)" --> MD2
     
     %% Motors
-    MD1 --> |OUT1,OUT2| M1[Left Wheel Motor]
-    MD1 --> |OUT3,OUT4| M2[Right Wheel Motor]
-    MD2 --> |OUT1,OUT2| M3[Drum Motors]
-    MD2 --> |OUT3,OUT4| M4[Auxiliary Motors]
+    MD1 -- "OUT1,OUT2" --> M1[Left Wheel Motor]
+    MD1 -- "OUT3,OUT4" --> M2[Right Wheel Motor]
+    MD2 -- "OUT1,OUT2" --> M3[Drum Motors]
+    MD2 -- "OUT3,OUT4" --> M4[Auxiliary Motors]
     
     %% Note about the pull-down resistor
-    R1[10kΩ Pull-down] -.-> |For stable boot| ESP
+    R1[10kΩ Pull-down] -. "For stable boot" .-> ESP
 ```
 
 ## Detailed Hardware Connections
